@@ -64,22 +64,34 @@ public class ListaA3 {
                     break;
                 }
                 case 2: {
-                    float nota;
+                    float nota1, nota2, media;
                     System.out.println("Faça um programa que receba as duas notas de um aluno, calcule sua média, e que imprima a sua situação: ");
                     System.out.println(">= 7 - Aprovado");
                     System.out.println(" < 7 - Reprovado");
                     while (true){
-                        System.out.print("Digite a nota do aluno: ");
-                        nota = entrada.nextFloat();
-                        if (nota < 0 || nota > 10) {
+                        System.out.print("Digite a primeira nota do aluno: ");
+                        nota1 = entrada.nextFloat();
+                        if (nota1 < 0 || nota1 > 10) {
                             System.out.println("Nota inválida, digite um valor de 0 a 10");
                         }
                         else {
                             break;
                         }
                     }
-                    if (nota >= 7) {
-                        System.out.println("Aluno aprovado com " + (nota * 10) + "% de aproveitamento.");
+                    while (true){
+                        System.out.print("Digite a segunda nota do aluno: ");
+                        nota2 = entrada.nextFloat();
+                        if (nota2 < 0 || nota2 > 10) {
+                            System.out.println("Nota inválida, digite um valor de 0 a 10");
+                        }
+                        else {
+                            break;
+                        }
+                    }
+
+                    media = (nota1 + nota2) /2;
+                    if (media >= 7) {
+                        System.out.println("Aluno aprovado com " + (media * 10) + "% de aproveitamento.");
                     }
                     else {
                         System.out.println("Aluno reprovado!");
@@ -200,13 +212,13 @@ public class ListaA3 {
                     if (imc < 20) {
                         System.out.println("De acordo com seu IMC voce está: Abaixo do Peso");
                     }
-                    else if (imc <= 20 && imc < 25) {
+                    else if (imc >= 20 && imc < 25) {
                         System.out.println("De acordo com seu IMC você está com: Peso Normal");
                     }
-                    else if (imc <= 25 && imc < 30) {
+                    else if (imc >= 25 && imc < 30) {
                         System.out.println("De acordo com seu IMC você está com: Sobre Peso");
                     }
-                    else if (imc <= 30 && imc < 40) {
+                    else if (imc >= 30 && imc < 40) {
                         System.out.println("De acordo com seu IMC você está: Obeso! Perigo!");
                     }
                     else {
@@ -226,7 +238,7 @@ public class ListaA3 {
                         System.out.println("Parabéns! Você está qualificado para receber um aumento.");
                         System.out.println("Seu salário atual é: R$" + salario);
                         aumento = salario + (salario * 0.3);
-                        System.out.println("Seu novo saário será: R$" + aumento);
+                        System.out.println("Seu novo salário será: R$" + aumento);
                     }
                     break;
                 }
@@ -255,7 +267,7 @@ public class ListaA3 {
                         System.out.println("De acordo com sua idade você está na categoria Adulto");
                     }
                     else {
-                        System.out.println("De acordom com sua idade você está na categoria Senior");
+                        System.out.println("De acordo com sua idade você está na categoria Senior");
                     }
                     break;
                 }
